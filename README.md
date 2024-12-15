@@ -8,7 +8,7 @@ This script is a Bash-based log file analyzer that provides functionality to:
 
 ### Credits
 
-Script author: Erwann IROUCHE  
+Script author: 4t0m 
 `＼(^o^)／`
 
 ---
