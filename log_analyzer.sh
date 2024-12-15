@@ -5,7 +5,7 @@ cat <<EOF
 
 Welcome to my Bash File log analyzer
 
-Credits: Erwann IROUCHE
+Credits: 4t0m
 ＼(^o^)／
 
 EOF
