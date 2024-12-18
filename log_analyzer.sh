@@ -77,34 +77,6 @@ aggregate_logs() {
   echo "¯\_(ツ)_/¯"
 }
   
-  # Function to determine the day of the week (custom calculation)
-day_of_the_week() {
-  #inspired by https://cs.uwaterloo.ca/~alopez-o/math-faq/node73.html
-
-  # Extract parts of the date
-  date=$1
-  d=$(echo "$date" | awk -F "-" '{print $3}') # Day
-  m=$(echo "$date" | awk -F "-" '{print $2}') # Month
-  c=$(echo "$date" | awk -F "-" '{print $1}' | grep -oP '\d{2}' | head -1) # Century 
-  y=$(echo "$date" | awk -F "-" '{print $1}' | grep -oP '\d{2}' | tail -1) # Year 
-
-   # Adjust month value
-  m=$( echo "($m+9)%12+1 " | bc)
-
-  if [[ $m == "11" || $m == "12" ]]; then
-      y=$(echo "$y-1"  | bc )
-      
-  fi
-
-  # Calculate day of the week using Zeller's formula
-  w=$(echo "($d +($m*2.6 - 0.2) - ($c*2) + ($y) + ($y/4) + ($c/4)) %7 " | bc)
-  if (( $(echo "$w < 0" | bc) )); then 
-    w=$(echo "$w+7" | bc)
-  fi
-  w=$(echo " $w/1 " | bc) 
-
-  echo "$w"
-}
 # Function to perform temporal analysis of log file
 temporal_analysis() {
   filename=$1
