@@ -117,10 +117,5 @@ Script author: 4t0m
    ```
 
 ---
-
-## Notes
-
-This script includes a function to determine the day of the week based on a given date, inspired by [Waterloo's Math FAQ](https://cs.uwaterloo.ca/~alopez-o/math-faq/node73.html).
-
 Happy analyzing!  
 ¯\_(ツ)_/¯
